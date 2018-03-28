@@ -10,7 +10,7 @@ class Child extends Component {
     return (
       <React.Fragment>
         <h2>
-          I am the Child component. I was not pass any props from the grand
+          I am the Child component. I was not passed any props from the grand
           parent. I render the GrandChild component.
         </h2>
         <GrandChild />
