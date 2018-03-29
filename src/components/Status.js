@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import MyContext from "./../context/myContext";
 
-import MainCard from "./MainCard";
-
-import { SubHeading, Code, Card, Button } from "evergreen-ui";
+import { SubHeading, Code } from "evergreen-ui";
 
 class Status extends Component {
   render() {

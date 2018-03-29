@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import GrandParent from "./GrandParent";
 import Child from "./Child";
 import GrandChild from "./GrandChild";
-import Status from "./Status";
 
 // Wrap top level app component in a provider component (that returns a context object)
 // To use the data, use a consumer component with a render prop child as a function
