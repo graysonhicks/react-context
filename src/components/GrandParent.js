@@ -35,7 +35,7 @@ class GrandParent extends Component {
         >
           <Heading size={900}>
             I am the GrandParent component. I am the context provider and store
-            the state. I render the Child component.
+            the state. The Child and GrandChild component are nested in me as <code>this.props.children</code>.
           </Heading>
         </Card>
 
