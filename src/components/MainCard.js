@@ -8,7 +8,7 @@ const MainCard = props => (
     backgroundColor="white"
     width="100%"
     height="auto"
-    marginBottom="2rem"
+    marginBottom="1rem"
     display="flex"
     justifyContent="center"
     alignItems="center"

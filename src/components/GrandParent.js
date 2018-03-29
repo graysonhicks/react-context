@@ -5,7 +5,7 @@ import MainCard from "./MainCard";
 import Status from "./Status";
 import StatusCardRow from "./StatusCardRow";
 
-import { Heading } from "evergreen-ui";
+import { Heading, colors } from "evergreen-ui";
 
 //create provider component
 class GrandParent extends Component {
@@ -26,7 +26,7 @@ class GrandParent extends Component {
             })
         }}
       >
-        <MainCard width="90%">
+        <MainCard width="90%" backgroundColor={colors.blue['10']}>
           <Heading size={800}>
             I am the GrandParent component. I am the context provider and store
             the state. The Child and GrandChild component are nested in me as{" "}

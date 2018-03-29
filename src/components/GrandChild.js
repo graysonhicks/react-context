@@ -6,7 +6,8 @@ import MainCard from "./MainCard";
 import Status from "./Status";
 import StatusCardRow from "./StatusCardRow";
 
-import { Heading } from "evergreen-ui";
+import { Heading, colors } from "evergreen-ui";
+
 
 class GrandChild extends Component {
   render() {
@@ -14,7 +15,7 @@ class GrandChild extends Component {
       <MyContext.Consumer>
         {context => (
           <React.Fragment>
-            <MainCard width="75%">
+            <MainCard width="75%" backgroundColor={colors.blue['50']}>
               <Heading size={600}>
                 I am the GrandChild component. I am able to receive and update
                 the state of the GrandParent component without using props.
