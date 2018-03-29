@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+
 import MyContext from "./../context/myContext";
 
-import Status from "./Status";
 import MainCard from "./MainCard";
+import Status from "./Status";
+import StatusCardRow from "./StatusCardRow";
 
-import { Heading, SubHeading, Code, Card } from "evergreen-ui";
+import { Heading } from "evergreen-ui";
 
 class GrandChild extends Component {
   render() {
@@ -12,69 +14,23 @@ class GrandChild extends Component {
       <MyContext.Consumer>
         {context => (
           <React.Fragment>
-            <MainCard width="50%">
-              <Heading size={700}>
+            <MainCard width="75%">
+              <Heading size={600}>
                 I am the GrandChild component. I am able to receive and update
                 the state of the GrandParent component without using props.
               </Heading>
-              <Card
-                clearfix
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                flexDirection="row"
-                marginTop="2rem"
-              >
-                <MainCard width="100%" marginRight="2rem">
-                  <SubHeading size={500}>
-                    The state of the GrandParent is:
-                  </SubHeading>
-                  <Code size={500}>
-                    <br />
-                    {`{`}
-                    <br />
-                    {`name: ${context.state.name},`}
-                    <br />
-                    {`age: ${context.state.age},`}
-                    <br />
-                    {`cool: ${context.state.cool}`}
-                    <br />
-                    {`}`}
-                    <br />
-                  </Code>
+              <StatusCardRow>
+                <MainCard width="100%">
+                  <Status />
                 </MainCard>
-                <MainCard
-                  elevation={3}
-                  backgroundColor="white"
-                  width="100%"
-                  height="auto"
-                  marginBottom="2rem"
-                  display="flex"
-                  justifyContent="center"
-                  alignItems="center"
-                  flexDirection="column"
-                  padding="2rem"
-                >
-                  <SubHeading size={500}>
-                    The state of the GrandParent is:
-                  </SubHeading>
-                  <Code size={500}>
-                    <br />
-                    {`{`}
-                    <br />
-                    {`name: ${context.state.name},`}
-                    <br />
-                    {`age: ${context.state.age},`}
-                    <br />
-                    {`cool: ${context.state.cool}`}
-                    <br />
-                    {`}`}
-                    <br />
-                  </Code>
+                <MainCard width="100%">
+                  <Status />
                 </MainCard>
-              </Card>
+                <MainCard width="100%">
+                  <Status />
+                </MainCard>
+              </StatusCardRow>
             </MainCard>
-            <Status />
           </React.Fragment>
         )}
       </MyContext.Consumer>

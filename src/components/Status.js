@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import MyContext from "./../context/myContext";
 
+import MainCard from "./MainCard";
+
 import { SubHeading, Code, Card, Button } from "evergreen-ui";
 
 class Status extends Component {
@@ -8,19 +10,10 @@ class Status extends Component {
     return (
       <MyContext.Consumer>
         {context => (
-          <Card
-            elevation={3}
-            padding="2rem"
-            backgroundColor="white"
-            width="50%"
-            height="auto"
-            marginBottom="2rem"
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            flexDirection="column"
-          >
-            <SubHeading size={500}>The state of the GrandParent is:</SubHeading>
+          <React.Fragment>
+            <SubHeading size={500}>
+              My <code>state</code> is:
+            </SubHeading>
             <Code size={500}>
               <br />
               {`{`}
@@ -34,10 +27,7 @@ class Status extends Component {
               {`}`}
               <br />
             </Code>
-            <Button appearance="blue" onClick={context.growOlder} marginTop="2rem">
-              When you click me, I update state on GrandParent
-            </Button>
-          </Card>
+          </React.Fragment>
         )}
       </MyContext.Consumer>
     );

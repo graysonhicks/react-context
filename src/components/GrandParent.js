@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import MyContext from "./../context/myContext";
 
-import { Heading, Card } from "evergreen-ui";
+import MainCard from "./MainCard";
+import Status from "./Status";
+import StatusCardRow from "./StatusCardRow";
+
+import { Heading } from "evergreen-ui";
 
 //create provider component
 class GrandParent extends Component {
@@ -22,22 +26,24 @@ class GrandParent extends Component {
             })
         }}
       >
-        <Card
-          elevation={3}
-          backgroundColor="white"
-          width="80%"
-          height={120}
-          marginBottom="2rem"
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          flexDirection="column"
-        >
-          <Heading size={900}>
+        <MainCard width="90%">
+          <Heading size={800}>
             I am the GrandParent component. I am the context provider and store
-            the state. The Child and GrandChild component are nested in me as <code>this.props.children</code>.
+            the state. The Child and GrandChild component are nested in me as{" "}
+            <code>this.props.children</code>.
           </Heading>
-        </Card>
+          <StatusCardRow>
+            <MainCard width="100%">
+              <Status />
+            </MainCard>
+            <MainCard width="100%">
+              <Status />
+            </MainCard>
+            <MainCard width="100%">
+              <Status />
+            </MainCard>
+          </StatusCardRow>
+        </MainCard>
 
         {this.props.children}
       </MyContext.Provider>

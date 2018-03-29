@@ -13,7 +13,7 @@ const MainCard = props => (
     justifyContent="center"
     alignItems="center"
     flexDirection="column"
-    padding="2rem"
+    padding="1rem"
     {...props}
   >
     {props.children}
