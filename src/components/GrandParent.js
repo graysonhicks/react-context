@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MyContext from "./../context/myContext";
-import Box from "./Box";
+
+import { Heading, Card } from "evergreen-ui";
 
 //create provider component
 class GrandParent extends Component {
@@ -21,12 +22,23 @@ class GrandParent extends Component {
             })
         }}
       >
-        <Box bgColor={this.state.grandParentColor} >
-          <h2>
+        <Card
+          elevation={3}
+          backgroundColor="white"
+          width="80%"
+          height={120}
+          marginBottom="2rem"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          flexDirection="column"
+        >
+          <Heading size={900}>
             I am the GrandParent component. I am the context provider and store
             the state. I render the Child component.
-          </h2>
-        </Box>
+          </Heading>
+        </Card>
+
         {this.props.children}
       </MyContext.Provider>
     );

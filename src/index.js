@@ -1,8 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './components/App';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+import registerServiceWorker from "./registerServiceWorker";
+import { injectGlobal } from "styled-components";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+injectGlobal`
+  #root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  }
+`;
+
+ReactDOM.render(<App />, document.getElementById("root"));
 registerServiceWorker();
