@@ -22,7 +22,24 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+
+@keyframes anim-info-updated {
+  0% {
+    background-color:  rgba(0, 128, 0, 0.5);
+    color: rgb(0, 64, 0);
+  }
+
+  50% {
+    background-color:  rgba(0, 128, 0, 0.5);
+    color: rgb(0, 64, 0);
+  }
+  100% {
+    background-color:  rgba(0, 128, 0, 0);
+    color: rgb(0, 128, 0);
+  }
+}
+
+.updating-value {
+  animation-name: anim-info-updated;
+  animation-duration: .5s;
 }

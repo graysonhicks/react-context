@@ -1,51 +1,68 @@
-import React, { Component } from "react";
-import MyContext from "./../context/myContext";
+import React, { Component } from 'react';
 
-import MainCard from "./MainCard";
-import Status from "./Status";
-import StatusCardRow from "./StatusCardRow";
+import Emoji from 'react-emoji-render';
+import { Heading, SubHeading, Code, Button, colors } from 'evergreen-ui';
 
-import { Heading, colors } from "evergreen-ui";
+import MyContext from './../context/myContext';
+
+import MainCard from './MainCard';
+import StatusCardRow from './StatusCardRow';
+import Parent from './Parent';
+import Value from './Value';
 
 //create provider component
 class GrandParent extends Component {
   state = {
-    name: "Grayson",
-    age: 29,
-    cool: true,
-    grandParentColor: "blue"
+    age: 80
+  };
+  growGrandParentOlder = () => {
+    this.setState({
+      age: this.state.age + 1
+    });
   };
   render() {
     return (
       <MyContext.Provider
         value={{
-          state: this.state,
-          growOlder: () =>
-            this.setState({
-              name: this.state.name + "n"
-            })
+          age: this.state.age,
+          growGrandParentOlder: this.growGrandParentOlder
         }}
       >
         <MainCard width="90%" backgroundColor={colors.blue['10']}>
-          <Heading size={800}>
-            I am the GrandParent component. I am the context provider and store
-            the state. The Child and GrandChild component are nested in me as{" "}
-            <code>this.props.children</code>.
+          <Heading size={500}>
+            <Emoji text="👴🏻" style={{ fontSize: '6rem' }} />I am the{' '}
+            <code>GrandParent</code> component. I am the context{' '}
+            <code>Provider</code> and store my <code>age</code> state and the{' '}
+            <code>growGrandParentOlder</code> function there. The{' '}
+            <code>Parent</code> component is nested in me. I do not pass any{' '}
+            <code>props</code> to the <code>Parent</code> component.
           </Heading>
           <StatusCardRow>
             <MainCard width="100%">
-              <Status />
-            </MainCard>
-            <MainCard width="100%">
-              <Status />
-            </MainCard>
-            <MainCard width="100%">
-              <Status />
+              <SubHeading size={500}>
+                My <code>state</code> is:
+              </SubHeading>
+              <Code size={500}>
+                <br />
+                {`{`}
+                <br />
+                <Value value={this.state.age}>{`age: ${this.state.age}`}</Value>
+                <br />
+                {`}`}
+                <br />
+              </Code>
+              <Button
+                appearance="blue"
+                onClick={this.growGrandParentOlder}
+                marginTop="2rem"
+              >
+                I update my own state with the growGrandParentOlder function
+              </Button>
             </MainCard>
           </StatusCardRow>
         </MainCard>
-
-        {this.props.children}
+        {/* Render Parent component.  Note lack of props or context it receives. */}
+        <Parent />
       </MyContext.Provider>
     );
   }
