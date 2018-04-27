@@ -23,9 +23,9 @@ class GrandChild extends Component {
   render() {
     return (
       <React.Fragment>
-        <MainCard width="75%" backgroundColor={colors.blue['50']}>
+        <MainCard width="90%" backgroundColor={colors.blue['50']}>
           <Heading size={500}>
-            <Emoji text="🧒🏼" style={{ fontSize: '6rem' }} /> I am the{' '}
+            <Emoji text="🧒🏼" style={{ fontSize: '5rem' }} /> I am the{' '}
             <code>GrandChild</code> component and the context{' '}
             <code>Consumer</code>. I am able to receive and update the{' '}
             <code>state</code> of the <code>GrandParent</code>
@@ -38,7 +38,7 @@ class GrandChild extends Component {
               <SubHeading size={500}>
                 My <code>state</code> age is:
               </SubHeading>
-              <Code size={500}>
+              <Code size={400}>
                 <br />
                 {`{`}
                 <br />
@@ -59,7 +59,7 @@ class GrandChild extends Component {
               <SubHeading size={500}>
                 My <code>props</code> age is:
               </SubHeading>
-              <Code size={500}>
+              <Code size={400}>
                 <br />
                 {`{`}
                 <br />
@@ -86,7 +86,7 @@ class GrandChild extends Component {
               <MyContext.Consumer>
                 {(context) => (
                   <React.Fragment>
-                    <Code size={500}>
+                    <Code size={400}>
                       <br />
                       {`{`}
                       <br />

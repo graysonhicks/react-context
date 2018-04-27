@@ -25,9 +25,9 @@ class Parent extends Component {
   render() {
     return (
       <React.Fragment>
-        <MainCard width="85%" backgroundColor={colors.blue['20']}>
+        <MainCard width="95%" backgroundColor={colors.blue['20']}>
           <Heading size={500}>
-            <Emoji text="👨🏻" style={{ fontSize: '6rem' }} /> I am the{' '}
+            <Emoji text="👨🏻" style={{ fontSize: '5rem' }} /> I am the{' '}
             <code>Parent</code> component. I was not passed any props from the{' '}
             <code>GrandParent</code>. The <code>GrandChild</code> component is
             nested in me. I pass it my own <code>age</code> as props.
@@ -37,7 +37,7 @@ class Parent extends Component {
               <SubHeading size={500}>
                 My <code>state</code> age is:
               </SubHeading>
-              <Code size={500}>
+              <Code size={400}>
                 <br />
                 {`{`}
                 <br />
@@ -58,7 +58,7 @@ class Parent extends Component {
               <SubHeading size={500}>
                 My <code>props</code> age is:
               </SubHeading>
-              <Code size={500}>
+              <Code size={400}>
                 <br />
                 {`{`}
                 <br />
@@ -72,7 +72,7 @@ class Parent extends Component {
               <SubHeading size={500}>
                 My <code>context</code> age is:
               </SubHeading>
-              <Code size={500}>
+              <Code size={400}>
                 <br />
                 {`{`}
                 <br />

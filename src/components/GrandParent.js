@@ -28,9 +28,9 @@ class GrandParent extends Component {
           growGrandParentOlder: this.growGrandParentOlder
         }}
       >
-        <MainCard width="90%" backgroundColor={colors.blue['10']}>
+        <MainCard width="100%" backgroundColor={colors.blue['10']}>
           <Heading size={500}>
-            <Emoji text="👴🏻" style={{ fontSize: '6rem' }} />I am the{' '}
+            <Emoji text="👴🏻" style={{ fontSize: '5rem' }} />I am the{' '}
             <code>GrandParent</code> component. I am the context{' '}
             <code>Provider</code> and store my <code>age</code> state and the{' '}
             <code>growGrandParentOlder</code> function there. The{' '}
@@ -42,7 +42,7 @@ class GrandParent extends Component {
               <SubHeading size={500}>
                 My <code>state</code> is:
               </SubHeading>
-              <Code size={500}>
+              <Code size={400}>
                 <br />
                 {`{`}
                 <br />
