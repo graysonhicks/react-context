@@ -52,7 +52,7 @@ class GrandChild extends Component {
                 onClick={this.growGrandChildOlder}
                 marginTop="2rem"
               >
-                I update my own state with my growGrandChildOlder function
+                Update my own state with my growGrandChildOlder function
               </Button>
             </MainCard>
             <MainCard width="100%">
@@ -75,8 +75,8 @@ class GrandChild extends Component {
                 onClick={this.props.growParentOlder}
                 marginTop="2rem"
               >
-                I update state on Parent through the growParentOlder function,
-                which is passed in props
+                Update state on Parent through growParentOlder function, which
+                is passed in props
               </Button>
             </MainCard>
             <MainCard width="100%">
@@ -102,8 +102,8 @@ class GrandChild extends Component {
                       onClick={context.growGrandParentOlder}
                       marginTop="2rem"
                     >
-                      I update state on GrandParent through the growOlder
-                      function, which is passed in context
+                      Update state on GrandParent through growOlder function,
+                      which is passed in context
                     </Button>
                   </React.Fragment>
                 )}

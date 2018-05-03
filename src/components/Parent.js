@@ -51,7 +51,7 @@ class Parent extends Component {
                 onClick={this.growParentOlder}
                 marginTop="2rem"
               >
-                I update my own state with my growParentOlder function
+                Update my own state with my growParentOlder function
               </Button>
             </MainCard>
             <MainCard width="100%">
