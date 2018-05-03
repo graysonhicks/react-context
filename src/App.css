@@ -41,5 +41,5 @@
 
 .updating-value {
   animation-name: anim-info-updated;
-  animation-duration: .5s;
+  animation-duration: 1s;
 }

@@ -20,7 +20,7 @@ class Value extends Component {
     if (!prevState.updating) {
       this.highlight = window.setTimeout(
         () => this.setState({ updating: false }),
-        500
+        1000
       );
     }
   }
