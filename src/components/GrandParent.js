@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Emoji from 'react-emoji-render';
-import { Heading, SubHeading, Code, Button, colors } from 'evergreen-ui';
+import { Heading, SubHeading, Code, colors } from 'evergreen-ui';
 
 import MyContext from './../context/myContext';
 
@@ -9,22 +9,25 @@ import MainCard from './MainCard';
 import StatusCardRow from './StatusCardRow';
 import Parent from './Parent';
 import Value from './Value';
+import MainButton from './Button';
 
 //create provider component
 class GrandParent extends Component {
   state = {
     age: 80
   };
+
   growGrandParentOlder = () => {
     this.setState({
       age: this.state.age + 1
     });
   };
+
   render() {
     return (
       <MyContext.Provider
         value={{
-          age: this.state.age,
+          age: this.age,
           growGrandParentOlder: this.growGrandParentOlder
         }}
       >
@@ -51,17 +54,12 @@ class GrandParent extends Component {
                 {`}`}
                 <br />
               </Code>
-              <Button
-                appearance="blue"
-                onClick={this.growGrandParentOlder}
-                marginTop="2rem"
-              >
+              <MainButton onClick={this.growGrandParentOlder}>
                 Update my own state with my growGrandParentOlder function
-              </Button>
+              </MainButton>
             </MainCard>
           </StatusCardRow>
         </MainCard>
-        {/* Render Parent component.  Note lack of props or context it receives. */}
         <Parent />
       </MyContext.Provider>
     );

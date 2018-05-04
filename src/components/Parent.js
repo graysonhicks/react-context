@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 
 import Emoji from 'react-emoji-render';
-import { Heading, SubHeading, Code, Button, colors } from 'evergreen-ui';
+import { Heading, SubHeading, Code, colors } from 'evergreen-ui';
 
 import GrandChild from './GrandChild';
 import MainCard from './MainCard';
 import StatusCardRow from './StatusCardRow';
 import Value from './Value';
+import MainButton from './Button';
 
 const context = null;
 
@@ -46,13 +47,9 @@ class Parent extends Component {
                 {`}`}
                 <br />
               </Code>
-              <Button
-                appearance="blue"
-                onClick={this.growParentOlder}
-                marginTop="2rem"
-              >
+              <MainButton onClick={this.growParentOlder}>
                 Update my own state with my growParentOlder function
-              </Button>
+              </MainButton>
             </MainCard>
             <MainCard width="100%">
               <SubHeading size={500}>

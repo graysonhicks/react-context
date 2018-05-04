@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Emoji from 'react-emoji-render';
+
+import { Heading, SubHeading, Code, colors } from 'evergreen-ui';
 import MyContext from './../context/myContext';
 
 import MainCard from './MainCard';
 import StatusCardRow from './StatusCardRow';
 import Value from './Value';
 
-import { Heading, SubHeading, Code, Button, colors } from 'evergreen-ui';
+import MainButton from './Button';
 
 class GrandChild extends Component {
   constructor() {
@@ -25,12 +27,12 @@ class GrandChild extends Component {
       <React.Fragment>
         <MainCard width="90%" backgroundColor={colors.blue['50']}>
           <Heading size={500}>
-            <Emoji text="🧒🏼" style={{ fontSize: '5rem' }} /> I am the{' '}
-            <code>GrandChild</code> component and the context{' '}
-            <code>Consumer</code>. I am able to receive and update the{' '}
+            <Emoji text="🧒🏼" style={{ fontSize: '5rem' }} /> I am the
+            <code>GrandChild</code> component and the context
+            <code>Consumer</code>. I am able to receive and update the
             <code>state</code> of the <code>GrandParent</code>
             component without having received it through <code>props</code>. I
-            receive the <code>age</code> of the <code>Parent</code> through{' '}
+            receive the <code>age</code> of the <code>Parent</code> through
             <code>props</code>.
           </Heading>
           <StatusCardRow>
@@ -47,13 +49,9 @@ class GrandChild extends Component {
                 {`}`}
                 <br />
               </Code>
-              <Button
-                appearance="blue"
-                onClick={this.growGrandChildOlder}
-                marginTop="2rem"
-              >
+              <MainButton onClick={this.growGrandChildOlder}>
                 Update my own state with my growGrandChildOlder function
-              </Button>
+              </MainButton>
             </MainCard>
             <MainCard width="100%">
               <SubHeading size={500}>
@@ -70,41 +68,32 @@ class GrandChild extends Component {
                 {`}`}
                 <br />
               </Code>
-              <Button
-                appearance="blue"
-                onClick={this.props.growParentOlder}
-                marginTop="2rem"
-              >
-                Update state on Parent through growParentOlder function, which
-                is passed in props
-              </Button>
+              <MainButton onClick={this.props.growParentOlder}>
+                Update Parent state thru growParentOlder fn() w/ props
+              </MainButton>
             </MainCard>
             <MainCard width="100%">
               <SubHeading size={500}>
                 My <code>context</code> age is:
               </SubHeading>
               <MyContext.Consumer>
-                {(context) => (
+                {({ age, growGrandParentOlder }) => (
                   <React.Fragment>
                     <Code size={400}>
                       <br />
                       {`{`}
                       <br />
-                      <Value value={context.age}>
-                        {`age: ${context.age ? context.age : 'undefined'}`}
+                      <Value value={age}>
+                        {`age: ${age ? age : 'undefined'}`}
                       </Value>
                       <br />
                       {`}`}
                       <br />
                     </Code>
-                    <Button
-                      appearance="blue"
-                      onClick={context.growGrandParentOlder}
-                      marginTop="2rem"
-                    >
-                      Update state on GrandParent through growOlder function,
-                      which is passed in context
-                    </Button>
+                    <MainButton onClick={growGrandParentOlder}>
+                      Update GrandParent state thru growOlder function w/
+                      context
+                    </MainButton>
                   </React.Fragment>
                 )}
               </MyContext.Consumer>
